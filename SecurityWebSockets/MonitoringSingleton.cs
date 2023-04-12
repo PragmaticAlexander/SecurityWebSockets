@@ -11,6 +11,11 @@ namespace SecurityWebSockets
             this.MonitoredEvents = new List<MonitoringEvent>();
             this.OccurEvent();
 
+            new Thread(LoopMonitor).Start();
+        }
+
+        private static void LoopMonitor()
+        {
             while (true)
             {
                 Random random = new Random();
@@ -18,7 +23,7 @@ namespace SecurityWebSockets
 
                 Thread.Sleep(timeToWait);
 
-                OccurEvent();
+                MonitoringSingleton.GetInstance().OccurEvent();
             }
         }
 
@@ -33,7 +38,7 @@ namespace SecurityWebSockets
             return _instance;
         }
 
-        private void OccurEvent()
+        public void OccurEvent()
         {
             MonitoringEvent e = new MonitoringEvent();
             Console.WriteLine($"{e.OccuranceTime} | {e.Description}");

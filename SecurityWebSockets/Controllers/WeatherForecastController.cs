@@ -29,5 +29,11 @@ namespace SecurityWebSockets.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("Monitor")]
+        public IEnumerable<MonitoringEvent> GetMonitor()
+        {
+            return MonitoringSingleton.GetInstance().MonitoredEvents;
+        }
     }
 }

@@ -14,7 +14,7 @@
         {
             Description = description != null ? description : this.randomDescription();
             ImageUrl = imageUrl != null ? imageUrl: this.randomImage();
-            Id = new Guid();
+            Id = Guid.NewGuid();
             OccuranceTime= DateTime.Now;
         }
 
