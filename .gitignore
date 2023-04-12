@@ -1,2 +1,3 @@
 #Ignore any local visual studio files
 .vs
+/.vs/SecurityWebSockets/v17/.suo
