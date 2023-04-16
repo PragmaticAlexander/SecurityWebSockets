@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LiveMonitorComponent } from './live-monitor/live-monitor.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LiveMonitorComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],
