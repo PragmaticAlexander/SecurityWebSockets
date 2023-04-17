@@ -4,7 +4,7 @@ import { firstValueFrom } from 'rxjs';
 
 type MonitoringEvent = {
   id: string,
-  occuranceTime: Date,
+  occurrenceTime: Date,
   description: string,
   imageUrl: string
 }

@@ -41,7 +41,7 @@ namespace SecurityWebSockets
         public void OccurEvent()
         {
             MonitoringEvent e = new MonitoringEvent();
-            Console.WriteLine($"{e.OccuranceTime} | {e.Description}");
+            Console.WriteLine($"{e.OccurrenceTime} | {e.Description}");
             MonitoredEvents.Add(e );
         }
 

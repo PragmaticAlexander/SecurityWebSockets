@@ -4,7 +4,7 @@
     {
         public Guid Id { get; set; }
 
-        public DateTime OccuranceTime { get; set; }
+        public DateTime OccurrenceTime { get; set; }
 
         public string Description { get; set; }
 
@@ -15,7 +15,7 @@
             Description = description != null ? description : this.randomDescription();
             ImageUrl = imageUrl != null ? imageUrl: this.randomImage();
             Id = Guid.NewGuid();
-            OccuranceTime= DateTime.Now;
+            OccurrenceTime= DateTime.Now;
         }
 
         private string randomImage()
