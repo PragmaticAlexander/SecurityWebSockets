@@ -19,7 +19,7 @@ namespace SecurityWebSockets
             while (true)
             {
                 Random random = new Random();
-                int timeToWait = random.Next(10, 11) * 1000;
+                int timeToWait = random.Next(20, 30) * 1000;
 
                 Thread.Sleep(timeToWait);
 
