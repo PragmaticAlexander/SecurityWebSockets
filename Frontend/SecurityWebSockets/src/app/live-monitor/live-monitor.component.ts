@@ -16,6 +16,7 @@ type MonitoringEvent = {
 })
 export class LiveMonitorComponent implements OnInit {
 
+  isLoading = true;
   MonitoringEvents: MonitoringEvent[] = [];
 
   constructor(private http: HttpClient){
@@ -23,8 +24,13 @@ export class LiveMonitorComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     //get data
-    const result = await firstValueFrom(this.http.get('https://localhost:7096/Monitor/LiveMonitor'));
-    console.log(result);
+    await this.reloadClick();
   }
 
+
+  async reloadClick() {
+    this.isLoading = true;
+    this.MonitoringEvents = await firstValueFrom(this.http.get('https://localhost:7096/Monitor/LiveMonitor')) as MonitoringEvent[];
+    this.isLoading = false;
+  }
 }
