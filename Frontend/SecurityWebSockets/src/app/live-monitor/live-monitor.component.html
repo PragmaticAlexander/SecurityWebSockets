@@ -1,14 +1,18 @@
 <div *ngIf="isLoading" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<h2>Events occured: {{MonitoringEvents.length}}</h2> <button (click)="reloadClick()" type="button" class="btn btn-primary">Reload</button>
 
-<div class="d-flex flex-wrap p-2">
-  <div *ngFor="let me of MonitoringEvents" class="card m-2" style="width: 18rem;">
-    <img src="{{me.imageUrl}}" class="card-img-left" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{me.description}}</h5>
-      <p class="card-text">{{me.occuranceTime}}</p>
+<div *ngIf="!isLoading">
+  <h2>Events occurred: {{MonitoringEvents.length}}</h2> <button (click)="reloadClick()" type="button" class="btn btn-primary">Reload</button>
+
+  <div class="d-flex flex-wrap p-2">
+    <div *ngFor="let me of MonitoringEvents" class="card m-2" style="width: 18rem;">
+      <img src="{{me.imageUrl}}" class="card-img-left" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{me.description}}</h5>
+        <p class="card-text">{{me.occuranceTime}}</p>
+      </div>
     </div>
   </div>
 </div>
+
