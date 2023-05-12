@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Options;
 using SecurityWebSockets;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,8 +21,7 @@ builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
-
-MonitoringSingleton ms = MonitoringSingleton.GetInstance();
+// MonitoringSingleton ms = MonitoringSingleton.GetInstance();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -35,6 +35,9 @@ app.UseHttpsRedirection();
 app.UseCors();
 
 app.UseAuthorization();
+
+app.UseWebSockets();
+
 
 app.MapControllers();
 
